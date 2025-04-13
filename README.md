@@ -1,3 +1,6 @@
+<b>A powerful Telegram bot for Refer & Earn systems, built with BotScripter/BB Engine.</b>
+
+
 # bbrebcontestbot - chat bot
 It is repository for chat bot: [@bbrebcontestbot](https://t.me/bbrebcontestbot)
 
