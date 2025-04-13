@@ -1,4 +1,4 @@
-<b>A powerful Telegram bot for Refer & Earn systems, built with BotScripter/BB Engine.</b>
+**A powerful Telegram bot for Refer & Earn systems, built with BotScripter/BB Engine.**
 
 
 # bbrebcontestbot - chat bot
