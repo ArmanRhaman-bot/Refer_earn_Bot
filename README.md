@@ -1,4 +1,89 @@
-**A powerful Telegram bot for Refer & Earn systems, built with BotScripter/BB Engine.**
+# ⭐ Refer & Earn Bot (REB) - Public Template
+
+A powerful Telegram bot for Refer & Earn systems, built with **BotScripter/BB Engine**.  
+Fully meets the specifications of the **BB Refer & Earn Competition**.
+
+---
+
+## ✨ Features
+
+### 👥 User Side
+
+- ✅ Mandatory **Channel Subscription**
+- 🎁 **Welcome Bonus** after joining channels *(logged in History)*
+- 💰 **Balance Menu**
+  - Total Balance
+  - Referral Balance
+  - Withdrawable Balance
+  - Earn Remaining to Reach Minimum Withdraw
+- 🧾 **Update Wallet** with live format validation
+- 💸 **Withdraw Menu**
+  - Auto Withdraw *(Crypto)*
+  - Manual Withdraw *(sent to admin for approval)*
+- 📨 **Invite Friends** *(Rank System with progress tracking)*
+- 🌳 **Referral Tree**
+  - Shows referred users & earned bonuses
+- 🏆 **Leaderboard**
+  - Top 10 referrers with auto rewards
+- 📖 **Transaction History**
+  - Latest 20 shown
+
+---
+
+### 🛠️ Admin Panel
+
+- ✅ Enable/Disable **Auto Withdraw**
+- ✅ Approve/Decline **Manual Withdraws**
+- ✅ Set **Welcome Bonus** & **Min Withdraw**
+- ⏰ Schedule **Leaderboard Rewards**
+- 📢 **Broadcast System** *(Text / Media / Forwards)*
+- 📊 Real-time **Stats & User Insights**
+
+---
+
+## ⚔️ Contest Compatibility
+
+This template fully matches the **Technical Specification** of the REB Competition and follows all **BB Contest Rules**.
+
+### ✅ Rule-Based Compliance Checklist:
+
+- [✓] Channel Subscription Logic  
+- [✓] One-time Welcome Bonus with logging  
+- [✓] Referral with bonus tracking & rewards  
+- [✓] Withdrawal System with Admin Flow  
+- [✓] Referral Tree Visualizer  
+- [✓] Rank-based Invite Bonus  
+- [✓] Leaderboard with Auto Rewarding  
+- [✓] Admin Interface with all controls  
+- [✓] Transaction Logging  
+- [✓] Broadcast System  
+
+---
+
+## ⚙️ How to Use
+
+1. Clone or Download the repo  
+2. Import into **BotScripter / Bot Business**  
+3. Update your **channel, wallet, and admin settings**  
+4. Launch the bot and start promoting!
+
+---
+
+## ⚖️ License
+
+Free to use and modify. Attribution appreciated.
+
+---
+
+## 🖼️ Demo Bot UI
+
+- **User Panel: [See Here](https://ibb.co/kgcVmd4Q)**
+- **Balance Menu: [See Here](https://ibb.co/nqftRfdn)**  
+- **Referral Menu: [See Here](https://ibb.co/fYCG8Hpr)**
+- **Transaction History: [See Here](https://ibb.co/Bhgbws4)**
+- **Admin Panel: [See Here](https://ibb.co/HpYVhLkf) [See Here](https://ibb.co/4gVZZNbk) [See Here](https://ibb.co/Myfr9YZX) [See Here](https://ibb.co/KzrxyP8q) [See Here](https://ibb.co/HDZnfn4X)** 
+
+---
 
 
 # bbrebcontestbot - chat bot
