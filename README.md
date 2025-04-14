@@ -77,11 +77,11 @@ Free to use and modify. Attribution appreciated.
 
 ## 🖼️ Demo Bot UI
 
-- **User Panel: [See Here](https://ibb.co/kgcVmd4Q)**
-- **Balance Menu: [See Here](https://ibb.co/nqftRfdn)**  
-- **Referral Menu: [See Here](https://ibb.co/fYCG8Hpr)**
-- **Transaction History: [See Here](https://ibb.co/Bhgbws4)**
-- **Admin Panel: [See Here](https://ibb.co/HpYVhLkf) [See Here](https://ibb.co/4gVZZNbk) [See Here](https://ibb.co/Myfr9YZX) [See Here](https://ibb.co/KzrxyP8q) [See Here](https://ibb.co/HDZnfn4X)** 
+- **User Panel: [See Here](https://t.me/zooxceo/29)**
+- **Balance Menu: [See Here](https://t.me/zooxceo/31)**  
+- **Referral Menu: [See Here](https://t.me/zooxceo/30)**
+- **Transaction History: [See Here](https://t.me/zooxceo/32)**
+- **Admin Panel: [See Here](https://t.me/zooxceo/33) [See Here](https://t.me/zooxceo/34) [See Here](https://t.me/zooxceo/35) [See Here](https://t.me/zooxceo/36) [See Here](https://t.me/zooxceo/37)** 
 
 ---
 
