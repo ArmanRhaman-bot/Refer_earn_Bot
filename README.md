@@ -85,6 +85,9 @@ Free to use and modify. Attribution appreciated.
 
 ---
 
+**🚀 Developer**
+@arman_rhaman (TG)
+BB REB Contest 2025
 
 # bbrebcontestbot - chat bot
 It is repository for chat bot: [@bbrebcontestbot](https://t.me/bbrebcontestbot)
