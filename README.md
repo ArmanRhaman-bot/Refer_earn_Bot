@@ -85,7 +85,8 @@ Free to use and modify. Attribution appreciated.
 
 ---
 
-**🚀 Developer**
+##🚀 Developer
+
 @arman_rhaman (TG)
 BB REB Contest 2025
 
