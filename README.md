@@ -88,6 +88,17 @@ Feel free to fork, contribute, or connect!
 
 Open-source and free to use. Attribution appreciated.
 
+## 🛠️ Technology Used
+
+- **Bot Business Scripting (BJS)**  
+  Custom JavaScript-like scripting language used in [BotScripter](https://botscripter.com) and [Bot Business](https://botbusiness.io), designed specifically for building Telegram bots.
+
+- **No External Frameworks**  
+  Fully built using native BJS without relying on any third-party libraries, ensuring optimal performance within the Bot Business ecosystem.
+
+- **Modular Design**  
+  Structured into reusable `commands`, `conditions`, and `callbacks` to maintain clean and scalable code.
+
 # bbrebcontestbot - chat bot
 It is repository for chat bot: [@bbrebcontestbot](https://t.me/bbrebcontestbot)
 
