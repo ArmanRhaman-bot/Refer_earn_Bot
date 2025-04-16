@@ -57,6 +57,15 @@ This bot fulfills **all rules & scoring criteria** for the contest.
 
 ---
 
+### 🔐 Captcha & IP Verification
+
+- Intelligent **Captcha system** triggered via `/verify`
+- Checks for **real user IP** and blocks **VPN / multi-account abuse**
+- Ensures only **real users** can access the bot's core functions
+- **Admin users** automatically bypass captcha & verification for seamless control
+
+---
+
 ## ⚙️ Getting Started
 
 1. Clone / Download this repo  
