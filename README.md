@@ -1,93 +1,92 @@
 # ⭐ Refer & Earn Bot (REB) - Public Template
 
-A powerful Telegram bot for Refer & Earn systems, built with **BotScripter/BB Engine**.  
-Fully meets the specifications of the **BB Refer & Earn Competition**.
+A powerful & production-ready Telegram bot for **Refer & Earn systems**, built using **BotScripter (BB Engine)**.  
+Designed specifically to meet all requirements of the **BB Refer & Earn Bot Competition**.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-### 👥 User Side
+### 👤 User Interface
 
-- ✅ Mandatory **Channel Subscription**
-- 🎁 **Welcome Bonus** after joining channels *(logged in History)*
-- 💰 **Balance Menu**
-  - Total Balance
-  - Referral Balance
-  - Withdrawable Balance
-  - Earn Remaining to Reach Minimum Withdraw
-- 🧾 **Update Wallet** with live format validation
-- 💸 **Withdraw Menu**
-  - Auto Withdraw *(Crypto)*
-  - Manual Withdraw *(sent to admin for approval)*
-- 📨 **Invite Friends** *(Rank System with progress tracking)*
-- 🌳 **Referral Tree**
-  - Shows referred users & earned bonuses
+- 🔒 **Mandatory Channel Subscription**
+- 🎉 One-time **Welcome Bonus** *(recorded in History)*
+- 💼 **Balance Overview**
+  - Total / Referral / Withdrawable Balance
+  - See how much more to earn to unlock Withdraw
+- 🔗 **Wallet Binding** with **live format validation**
+- 💸 **Withdraw Options**
+  - Auto Withdraw to any crypto wallet (5 sec processing)
+  - Manual Withdraw with Admin Approval flow
+- 👥 **Invite Friends** with Rank-Based Bonuses & Progress Bar
+- 🌳 **Referral Tree**: Visual & Bonus tracking of your team
 - 🏆 **Leaderboard**
-  - Top 10 referrers with auto rewards
-- 📖 **Transaction History**
-  - Latest 20 shown
+  - Top 10 referrers
+  - Auto reward distribution by admin-set date
+- 📜 **Transaction History** (last 20 entries)
 
 ---
 
-### 🛠️ Admin Panel
+### 🛠️ Admin Control Panel
 
-- ✅ Enable/Disable **Auto Withdraw**
-- ✅ Approve/Decline **Manual Withdraws**
-- ✅ Set **Welcome Bonus** & **Min Withdraw**
-- ⏰ Schedule **Leaderboard Rewards**
-- 📢 **Broadcast System** *(Text / Media / Forwards)*
-- 📊 Real-time **Stats & User Insights**
-
----
-
-## ⚔️ Contest Compatibility
-
-This template fully matches the **Technical Specification** of the REB Competition and follows all **BB Contest Rules**.
-
-### ✅ Rule-Based Compliance Checklist:
-
-- [✓] Channel Subscription Logic  
-- [✓] One-time Welcome Bonus with logging  
-- [✓] Referral with bonus tracking & rewards  
-- [✓] Withdrawal System with Admin Flow  
-- [✓] Referral Tree Visualizer  
-- [✓] Rank-based Invite Bonus  
-- [✓] Leaderboard with Auto Rewarding  
-- [✓] Admin Interface with all controls  
-- [✓] Transaction Logging  
-- [✓] Broadcast System  
+- Toggle **Auto/Manual Withdraw** mode
+- Review & Act on **Withdraw Requests**
+- Set **Welcome Bonus**, **Min Withdraw**, and **Referral Rewards**
+- Schedule **Leaderboard Rewards**
+- Run **Broadcasts** (Text / Media / Forwards)
+- Access live **User Stats**, **Growth Logs**, and more
 
 ---
 
-## ⚙️ How to Use
+## ✅ BB Competition Compatibility
 
-1. Clone or Download the repo  
-2. Import into **BotScripter / Bot Business**  
-3. Update your **channel, wallet, and admin settings**  
-4. Launch the bot and start promoting!
+This bot fulfills **all rules & scoring criteria** for the contest.
+
+### Compliance Checklist:
+
+- [x] Channel Join Enforcement  
+- [x] Welcome Bonus (Logged)  
+- [x] Invite with Rank-Based Bonus  
+- [x] Wallet & Balance Validation  
+- [x] Manual + Auto Withdraw Systems  
+- [x] Admin Panel with All Controls  
+- [x] Leaderboard + Referral Tree  
+- [x] Transaction History Logging  
+- [x] Broadcast Tools  
+- [x] BB-Ready Clean Code  
+
+---
+
+## ⚙️ Getting Started
+
+1. Clone / Download this repo  
+2. Import into **BotScripter** or **Bot Business**  
+3. Configure channels, admin ID, wallet, and other settings  
+4. Launch your bot and promote your campaign!
+
+---
+
+## 🧪 Live Demo (Screenshots)
+
+- **User Panel:** [View](https://t.me/zooxceo/29)  
+- **Balance Menu:** [View](https://t.me/zooxceo/31)  
+- **Referral Menu:** [View](https://t.me/zooxceo/30)  
+- **History Logs:** [View](https://t.me/zooxceo/32)  
+- **Admin Panel:**  
+  [1](https://t.me/zooxceo/33) [2](https://t.me/zooxceo/34) [3](https://t.me/zooxceo/35) [4](https://t.me/zooxceo/36) [5](https://t.me/zooxceo/37)
+
+---
+
+## 🧑‍💻 Developer
+
+**@arman_rhaman**  
+Feel free to fork, contribute, or connect!
 
 ---
 
 ## ⚖️ License
 
-Free to use and modify. Attribution appreciated.
-
----
-
-## 🖼️ Demo Bot UI
-
-- **User Panel: [See Here](https://t.me/zooxceo/29)**
-- **Balance Menu: [See Here](https://t.me/zooxceo/31)**  
-- **Referral Menu: [See Here](https://t.me/zooxceo/30)**
-- **Transaction History: [See Here](https://t.me/zooxceo/32)**
-- **Admin Panel: [See Here](https://t.me/zooxceo/33) [See Here](https://t.me/zooxceo/34) [See Here](https://t.me/zooxceo/35) [See Here](https://t.me/zooxceo/36) [See Here](https://t.me/zooxceo/37)** 
-
----
-
-**🚀 Developer**
-
-@arman_rhaman (TG)
+Open-source and free to use. Attribution appreciated.
 
 # bbrebcontestbot - chat bot
 It is repository for chat bot: [@bbrebcontestbot](https://t.me/bbrebcontestbot)
