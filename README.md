@@ -32,6 +32,8 @@ Designed specifically to meet all requirements of the **BB Refer & Earn Bot Comp
 - Toggle **Auto/Manual Withdraw** mode
 - Review & Act on **Withdraw Requests**
 - Set **Welcome Bonus**, **Min Withdraw**, and **Referral Rewards**
+- Maintance mode On/Off broadcast 
+- Withdraw Mode On/Off broadcast 
 - Schedule **Leaderboard Rewards**
 - Run **Broadcasts** (Text / Media / Forwards)
 - Access live **User Stats**, **Growth Logs**, and more
