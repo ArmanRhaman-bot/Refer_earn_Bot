@@ -16,57 +16,74 @@
   group: 
 CMD*/
 
-Api.deleteMessage({chat_id: chat.chatid, message_id: request.message_id});
-var ont = User.getProperty("myk11");
+Api.deleteMessage({ chat_id: chat.chatid, message_id: request.message_id });
 
-var admin = Bot.getProperty("admin")
-var users = user.telegramid
-var botLink = "@" + bot.name
+var ont = User.getProperty("myk11");
+var admin = Bot.getProperty("admin");
+var users = user.telegramid;
+var botLink = "@" + bot.name;
 
 if (users === admin) {
-  var maintenanceStatus = message
+  var maintenanceStatus = message;
 
   if (maintenanceStatus === "On" || maintenanceStatus === "Off") {
-    Bot.setProperty("maintenanceStatus", maintenanceStatus, "string")
 
-    var text =
-      "<b>🤖 Bot Maintenance mode set to :</b> <code>" + maintenanceStatus + "</code>"
-var buttons = [
-  [{ text: "🔙 Back", callback_data: "/a_back" }]]
+    Bot.setProperty("maintenanceStatus", maintenanceStatus, "string");
+
+    
+    var text = "<b>🤖 Bot Maintenance mode set to :</b> <code>" + maintenanceStatus + "</code>";
+    var buttons = [[{ text: "🔙 Back", callback_data: "/a_back" }]];
+    
     Api.editMessageText({
-  text: text,
-  message_id: ont,
-  parse_mode: "HTML",
-  reply_markup: {
-    inline_keyboard: buttons
-  }
-});
+      text: text,
+      message_id: ont,
+      parse_mode: "HTML",
+      reply_markup: { inline_keyboard: buttons }
+    });
+
+    
+    var msg = (maintenanceStatus === "On") ?
+      "⚠️ The bot is now under *maintenance*.\nSome features may be temporarily unavailable." :
+      "✅ The bot is *back online* now.\nAll features are fully functional.";
+
+    var buttonText = (maintenanceStatus === "On") ? "🚀 More Updates" : "🚀 More Updates";
+    var buttonUrl = "t.me/TGOtpRecever"; 
+
+    var keyboard = [[{ text: buttonText, url: buttonUrl }]];
+
+    
+    var allUsers = Bot.getProperty("user_list", []);
+    for (var i = 0; i < allUsers.length; i++) {
+      Api.sendMessage({
+        chat_id: allUsers[i],
+        text: msg,
+        parse_mode: "markdown",
+        reply_markup: { inline_keyboard: keyboard }
+      });
+    }
 
   } else {
-    var text =
-      "<b>⚠️ Send only:</b> <code>On</code> <b>or</b> <code>Off</code> mode"
-var buttons = [
-  [{ text: "🔙 Back", callback_data: "/a_back" }]]
+    
+    var text = "<b>⚠️ Send only:</b> <code>On</code> <b>or</b> <code>Off</code> mode";
+    var buttons = [[{ text: "🔙 Back", callback_data: "/a_back" }]];
+    
     Api.editMessageText({
-  text: text,
-  message_id: ont,
-  parse_mode: "HTML",
-  reply_markup: {
-    inline_keyboard: buttons
+      text: text,
+      message_id: ont,
+      parse_mode: "HTML",
+      reply_markup: { inline_keyboard: buttons }
+    });
   }
-});
 
-  }
 } else {
-  var txt = "*❌ You are not our Bot admin*"
-var inlkey = [
-  [{ text: "🔙 Back", callback_data: "/a_back" }]];
-
-Api.editMessageText({
+  
+  var txt = "*❌ You are not our Bot admin*";
+  var inlkey = [[{ text: "🔙 Back", callback_data: "/a_back" }]];
+  
+  Api.editMessageText({
     message_id: ont,
     text: txt,
     parse_mode: "markdown",
     reply_markup: { inline_keyboard: inlkey }
-})
+  });
 }
-
