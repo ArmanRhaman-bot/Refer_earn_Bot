@@ -16,206 +16,148 @@
   group: 
 CMD*/
 
-Api.deleteMessage({chat_id: chat.chatid, message_id: request.message_id});
+Api.deleteMessage({ chat_id: chat.chatid, message_id: request.message_id });
+
 var ont = User.getProperty("myk11");
 
-var fullBotUsers = Bot.getProperty("wholeUsers")
-var text =
-      "<b>💥 Broadcast Sent to all users</b>"
-var buttons = [
-  [{ text: "🔙 Back", callback_data: "/a_back" }]]
-    Api.editMessageText({
+
+var fullBotUsers = Bot.getProperty("user_list", []);
+
+var text = "<b>💥 Broadcast Sent to all users</b>";
+var buttons = [[{ text: "🔙 Back", callback_data: "/a_back" }]];
+
+Api.editMessageText({
   text: text,
   message_id: ont,
   parse_mode: "HTML",
-  reply_markup: {
-    inline_keyboard: buttons
-  }
+  reply_markup: { inline_keyboard: buttons }
 });
 
 
-var usrname = "Admin"
-if (!user.username) {
-  var usrname =
-    '<a href="tg://user?id=' + user.telegramid + '">' + user.first_name + "</a>"
+var usrname = user.username
+  ? "@" + user.username
+  : '<a href="tg://user?id=' + user.telegramid + '">' + user.first_name + "</a>";
+
+
+function sendToAllUsers(sendFunc) {
+  for (var i in fullBotUsers) {
+    var uid = fullBotUsers[i];
+    sendFunc(uid);
+  }
 }
 
+//POLL
 if (request.poll) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
+  sendToAllUsers(function (uid) {
     Api.forwardMessage({
-      chat_id: info,
+      chat_id: uid,
       from_chat_id: user.telegramid,
-      message_id: request.message_id
-    })
-  }
-  return
+      message_id: request.message.message_id
+    });
+  });
+  return;
 }
 
-
-
+// VOICE
 if (request.voice) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    if (!request.caption) {
-      Api.sendVoice({ chat_id: info, voice: request.voice.file_id })
-    }
-    if (request.caption) {
-      Api.sendVoice({
-        chat_id: info,
-        voice: request.voice.file_id,
-        caption: request.caption,
-        parse_mode: "HTML"
-      })
-    }
-  }
-  return
+  sendToAllUsers(function (uid) {
+    Api.sendVoice({
+      chat_id: uid,
+      voice: request.voice.file_id,
+      caption: request.caption || undefined,
+      parse_mode: "HTML"
+    });
+  });
+  return;
 }
 
-
+// VIDEO
 if (request.video) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    if (!request.caption) {
-      Api.sendVideo({ chat_id: info, video: request.video.file_id })
-    }
-    if (request.caption) {
-      Api.sendVideo({
-        chat_id: info,
-        video: request.video.file_id,
-        caption: request.caption,
-        parse_mode: "HTML"
-      })
-    }
-  }
-  return
+  sendToAllUsers(function (uid) {
+    Api.sendVideo({
+      chat_id: uid,
+      video: request.video.file_id,
+      caption: request.caption || undefined,
+      parse_mode: "HTML"
+    });
+  });
+  return;
 }
 
-
+// DOCUMENT
 if (request.document) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    if (!request.caption) {
-      Api.sendDocument({ chat_id: info, document: request.document.file_id })
-    }
-    if (request.caption) {
-      Api.sendDocument({
-        chat_id: info,
-        document: request.document.file_id,
-        caption: request.caption,
-        parse_mode: "HTML"
-      })
-    }
-  }
-  return
+  sendToAllUsers(function (uid) {
+    Api.sendDocument({
+      chat_id: uid,
+      document: request.document.file_id,
+      caption: request.caption || undefined,
+      parse_mode: "HTML"
+    });
+  });
+  return;
 }
 
-
+// AUDIO
 if (request.audio) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    if (!request.caption) {
-      Api.sendAudio({ chat_id: info, audio: request.audio.file_id })
-    }
-    if (request.caption) {
-      Api.sendAudio({
-        chat_id: info,
-        audio: request.audio.file_id,
-        caption: request.caption,
-        parse_mode: "HTML"
-      })
-    }
-  }
-  return
+  sendToAllUsers(function (uid) {
+    Api.sendAudio({
+      chat_id: uid,
+      audio: request.audio.file_id,
+      caption: request.caption || undefined,
+      parse_mode: "HTML"
+    });
+  });
+  return;
 }
 
-if (request.photo[0]) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    if (!request.caption) {
-      Api.sendPhoto({ chat_id: info, photo: request.photo[0].file_id })
-    }
-    if (request.caption) {
-      Api.sendPhoto({
-        chat_id: info,
-        photo: request.photo[0].file_id,
-        caption: request.caption,
-        parse_mode: "HTML"
-      })
-    }
-  }
-  return
+// PHOTO
+if (request.photo && request.photo[0]) {
+  sendToAllUsers(function (uid) {
+    Api.sendPhoto({
+      chat_id: uid,
+      photo: request.photo[0].file_id,
+      caption: request.caption || undefined,
+      parse_mode: "HTML"
+    });
+  });
+  return;
 }
 
-
+// STICKER
 if (request.sticker) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
-    Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    Api.sendSticker({ chat_id: info, sticker: request.sticker.file_id })
-  }
-  return
+  sendToAllUsers(function (uid) {
+    Api.sendSticker({
+      chat_id: uid,
+      sticker: request.sticker.file_id
+    });
+  });
+  return;
 }
 
-var promo = "Important"
-if (request.entities[0]) {
-  if (request.entities[0].type == "url") {
-    var promo = "Promotional"
-  }
-}
-
+// ANIMATION
 if (request.animation) {
-  for (var index in fullBotUsers) {
-    var info = fullBotUsers[index]
+  sendToAllUsers(function (uid) {
+    Api.sendAnimation({
+      chat_id: uid,
+      animation: request.animation.file_id
+    });
+  });
+  return;
+}
+
+// Message too long check
+if (message && message.length > 1000) {
+  Bot.sendMessage("Message Too Big.");
+  return;
+}
+
+// Text Message
+if (message) {
+  sendToAllUsers(function (uid) {
     Api.sendMessage({
-      chat_id: info,
-      text: ""
-    })
-    Api.sendAnimation({ chat_id: info, animation: request.animation.file_id })
-  }
-  return
+      chat_id: uid,
+      text: message,
+      parse_mode: "HTML"
+    });
+  });
 }
-
-if (message.length > 1000) {
-  Bot.sendMessage("Message Too Big.")
-  return
-}
-for (var index in fullBotUsers) {
-  var info = fullBotUsers[index]
-  Api.sendMessage({
-    chat_id: info,
-    text:
-      "" +
-      message +
-      "",
-    parse_mode: "HTML"
-  })
-}
-
