@@ -51,6 +51,7 @@ if (maintenanceStatus === "On") {
 }
 
 
+
 var refbonus = Bot.getProperty("refbonus","0")
 var currentLevelProp = User.getProperty("currentLevel") || "Rookie";
 var botc = Bot.getProperty("botc", "USDT");
@@ -62,6 +63,19 @@ let myTelegramId = user.telegramid;
 
 let invLink = Libs.ReferralLib.currentUser.getRefLink(""+bot.name+"","ref_");
 
+let qrBase = "https://api.qrserver.com/v1/create-qr-code/?size=1024x1024&data=";
+let qrLink = qrBase + encodeURIComponent(invLink);
+
+var inlkey = [
+  [
+    {
+      text: "📲 QR",
+      web_app: {
+        url: qrLink
+      }
+    }
+  ]
+];
 
 const LEVELS = {
   "Overlord": { min: 500, reward: 10000, emoji: "👑", next: "MAX" },
@@ -176,10 +190,22 @@ var txt = `
  Diamond 💎 → 100 refs → 3000 ${botc}
  Overlord 👑 → 500 refs → 10000 ${botc}</blockquote>`;
 
-var inlkey = [[{ text: "COPY LINK", copy_text: {text: ""+invLink+""}},{ text: "SHARE", switch_inline_query: "**💸 Passive income unlocked!**\n__😎 No investment - just share & earn:__\n\n**✅ Join with link:** "+invLink+""}],
+var inlkey = [
+  [
+    {
+      text: "📓 Save QR Code",
+      web_app: {
+        url: qrLink
+      }
+    }
+  ],
+  [{ text: "COPY LINK", copy_text: {text: ""+invLink+""}},
+   { text: "SHARE", switch_inline_query: "**💸 Passive income unlocked!**\n__😎 No investment - just share & earn:__\n\n**✅ Join with link:** "+invLink+""}],
   [{ text: "🌲 My Referrals Trees", callback_data: "/my_ref" }],
   [{ text: "🔙 Back", callback_data: "/earn_menu" }]
 ];
+
+
 
 Api.editMessageText({
   message_id: request.message.message_id,
