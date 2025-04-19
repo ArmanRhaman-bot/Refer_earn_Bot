@@ -27,6 +27,33 @@ Designed specifically to meet all requirements of the **BB Refer & Earn Bot Comp
 
 ---
 
+### 🧧 Redeem & Create Code
+
+#### 🛠️ Admin Features (Create)
+
+- ✨ Admin can create codes **without amount limitations**  
+- ✨ Any **code name** can be used (no duplicate name restriction)  
+- ✨ Optionally post the created code to a **channel** for users to redeem  
+
+#### 👥 User Features (Create)
+
+- ⭐ Users can generate codes using their **own balance**  
+- ⭐ The amount used **must be available** in their balance  
+- ⭐ Codes can be created using **any name, word, or number**  
+- ⭐ Only **one code per name** is allowed  
+- ⭐ After creating a code, the **total cost = amount × max claims × 2**  
+- ⭐ Created code can be **posted to the Redeem Channel** via a single click  
+- ⭐ Users will receive **notifications** when someone redeems their code  
+
+#### 🎁 Redeem Features
+
+- 🔥 **Admins can redeem any code**, but won't be notified if they redeem their own  
+- 🔥 Invalid codes show an **"Incorrect Code"** popup  
+- 🔥 A person can **redeem a code only once**  
+- 🔥 On successful claim, the **claimed amount is added** to the user's balance  
+
+---
+
 ### 🛠️ Admin Control Panel
 
 - Toggle **Auto/Manual Withdraw** mode
@@ -98,6 +125,8 @@ Feel free to fork, contribute, or connect!
 ## ⚖️ License
 
 Open-source and free to use. Attribution appreciated.
+
+---
 
 ## 🛠️ Technology Used
 
