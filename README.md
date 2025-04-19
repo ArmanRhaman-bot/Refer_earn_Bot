@@ -27,30 +27,52 @@ Designed specifically to meet all requirements of the **BB Refer & Earn Bot Comp
 
 ---
 
+### 💳 Payment Request System
+
+Allow users to **send payment requests** to other bot users. This system supports peer-to-peer microtransactions within the bot ecosystem.
+
+#### 📤 Requesting a Payment
+
+- Users can send a **payment request with amount** to another user's ID
+- Receiver gets a **confirm button** to accept the request
+- Requested amount must be available in the receiver’s balance
+
+#### ✅ Accepting a Request
+
+- Receiver’s withdrawable balance is **deducted**
+- Requester’s balance is **increased**
+- Both users get a **success message**
+- Requester’s **transaction history** is updated:
+
+#### ❌ Rejection or Insufficient Balance
+
+- Auto validation for available balance
+- Requests are **one-time only** and can’t be re-used
+
+---
+
 ### 🧧 Redeem & Create Code
 
 #### 🛠️ Admin Features (Create)
 
-- ✨ Admin can create codes **without amount limitations**  
-- ✨ Any **code name** can be used (no duplicate name restriction)  
-- ✨ Optionally post the created code to a **channel** for users to redeem  
+- Admins can create codes **without amount limits**
+- Any **code name** allowed (no restrictions)
+- Codes can be posted directly to a **redeem channel**
 
 #### 👥 User Features (Create)
 
-- ⭐ Users can generate codes using their **own balance**  
-- ⭐ The amount used **must be available** in their balance  
-- ⭐ Codes can be created using **any name, word, or number**  
-- ⭐ Only **one code per name** is allowed  
-- ⭐ After creating a code, the **total cost = amount × max claims**  
-- ⭐ Created code can be **posted to the Redeem Channel** via a single click  
-- ⭐ Users will receive **notifications** when someone redeems their code  
+- Users can generate codes using **their balance**
+- Cost = `amount × max claims`
+- One unique name per code
+- Created codes can be **shared to others**
+- Users receive **notification** when someone claims their code
 
 #### 🎁 Redeem Features
 
-- 🔥 **Admins can redeem any code**, but won't be notified if they redeem their own  
-- 🔥 Invalid codes show an **"Incorrect Code"** popup  
-- 🔥 A person can **redeem a code only once**  
-- 🔥 On successful claim, the **claimed amount is added** to the user's balance  
+- Admins can redeem any code (self-redeem has no alert)
+- Invalid or expired codes show **"Incorrect Code"**
+- Each user can claim each code **only once**
+- On success, claimed amount is **added to user's balance**
 
 ---
 
@@ -59,7 +81,7 @@ Designed specifically to meet all requirements of the **BB Refer & Earn Bot Comp
 - Toggle **Auto/Manual Withdraw** mode
 - Review & Act on **Withdraw Requests**
 - Set **Welcome Bonus**, **Min Withdraw**, and **Referral Rewards**
-- Maintance mode On/Off broadcast 
+- Maintenance mode On/Off broadcast 
 - Withdraw Mode On/Off broadcast 
 - Schedule **Leaderboard Rewards**
 - Run **Broadcasts** (Text / Media / Forwards)
@@ -83,6 +105,7 @@ This bot fulfills **all rules & scoring criteria** for the contest.
 - [x] Transaction History Logging  
 - [x] Broadcast Tools  
 - [x] BB-Ready Clean Code  
+- [x] Peer-to-Peer Payment Requests  
 
 ---
 
@@ -95,29 +118,28 @@ This bot fulfills **all rules & scoring criteria** for the contest.
 
 ---
 
-## ⚙️ Getting Started
-
-1. Clone / Download this repo  
-2. Import into **BotScripter** or **Bot Business**  
-3. Configure channels, admin ID, wallet, and other settings  
-4. Launch your bot and promote your campaign!
-
----
-
 ## 🧪 Live Demo (Screenshots)
 
-- **User Panel:** [View](https://t.me/zooxceo/29)  
-- **Balance Menu:** [View](https://t.me/zooxceo/31)  
-- **Referral Menu:** [View](https://t.me/zooxceo/30)  
-- **History Logs:** [View](https://t.me/zooxceo/32)  
-- **Admin Panel:**  
-  [1](https://t.me/zooxceo/33) [2](https://t.me/zooxceo/34) [3](https://t.me/zooxceo/35) [4](https://t.me/zooxceo/36) [5](https://t.me/zooxceo/37)
+| Section | Preview |
+|--------|---------|
+| User Panel | [View](https://t.me/zooxceo/41) |
+| Balance Menu | [View](https://t.me/zooxceo/42) |
+| Referral Menu | [View](https://t.me/zooxceo/43) |
+| Referral Tree | [View](https://t.me/zooxceo/44) |
+| History Logs | [View](https://t.me/zooxceo/45) |
+| Wallet Bind | [View](https://t.me/zooxceo/46) |
+| Withdraw Menu | [View](https://t.me/zooxceo/47) |
+| Redeem Menu | [View](https://t.me/zooxceo/48) |
+| Code Create | [View](https://t.me/zooxceo/49) |
+| Code Redeem | [View](https://t.me/zooxceo/50) |
+| Captcha Verify | [View](https://t.me/zooxceo/51) |
+| Admin Panel | [51-70](https://t.me/zooxceo/52) ➝ [70](https://t.me/zooxceo/70) |
 
 ---
 
 ## 🧑‍💻 Developer
 
-**@arman_rhaman**  
+**[@arman_rhaman](https://t.me/arman_rhaman)**  
 Feel free to fork, contribute, or connect!
 
 ---
@@ -131,95 +153,10 @@ Open-source and free to use. Attribution appreciated.
 ## 🛠️ Technology Used
 
 - **Bot Business Scripting (BJS)**  
-  Custom JavaScript-like scripting language used in [BotScripter](https://botscripter.com) and [Bot Business](https://botbusiness.io), designed specifically for building Telegram bots.
+Custom JavaScript-like scripting language used in [BotScripter](https://botscripter.com) and [Bot Business](https://botbusiness.io), designed specifically for building Telegram bots.
 
 - **No External Frameworks**  
-  Fully built using native BJS without relying on any third-party libraries, ensuring optimal performance within the Bot Business ecosystem.
+Fully built using native BJS without relying on any third-party libraries, ensuring optimal performance within the Bot Business ecosystem.
 
 - **Modular Design**  
-  Structured into reusable `commands`, `conditions`, and `callbacks` to maintain clean and scalable code.
-
-# bbrebcontestbot - chat bot
-It is repository for chat bot: [@bbrebcontestbot](https://t.me/bbrebcontestbot)
-
-## What it is?
-This repository can be imported to [Bots.Business](https://bots.business) as a worked chat bot.
-
-[Bots.Business](https://bots.business) - it is probably the first CBPaaS - Chat Bot Platform as a Service.
-
-A CBPaaS is a cloud-based platform that enables developers to create chatbots without needing to build backend infrastructure.
-
-## Create your own bot for Telegram from this Git repo
-
-How to create bot?
-1. Create bot with [@BotFather](https://telegram.me/BotFather) and take Secret Token
-2. Create bot in App and add Secret Token
-3. Add Public Key from App as [Deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) with read access (and write access for bot exporting if you need it)
-4. Do import for this git repo
-
-Now you can talk with yours new Telegram Bot
-
-See [more](https://help.bots.business/getting-started)
-
-## Commands - in commands folder
-File name - it is command name (Bot it can be rewritten in command description)
-
-Command can have: `name`, `help`, `aliases` (second names), `answer`, `keyboard`, `scnarios` (for simple logic) and other options.
-
-### Command description
-It is file header:
-
-    /*CMD
-      command: /test
-      help: this is help for ccommand
-      need_reply: [ true or false here ]
-      auto_retry_time: [ time in sec ]
-      answer: it is example answer for /test command
-      keyboard: button1, button2
-      aliases: /test2, /test3
-    CMD*/
-
-See [more](https://help.bots.business/commands)
-
-### Command body
-It is command code in JavaScript.
-Use Bot Java Script for logic in command.
-
-For example:
-> Bot.sendMessage(2+2);
-
-See [more](https://help.bots.business/scenarios-and-bjs)
-
-
-## Libraries - in libs folder
-You can store common code in the libs folder. File name - it is library name.
-
-For example code in myLib.js:
-
-    function hello(){ Bot.sendMessage("Hello from lib!") }
-    function goodbye(name){ Bot.sendMessage("Goodbye, " + name) }
-
-    publish({
-      sayHello: hello,
-      sayGoodbyeTo: goodbye
-    })
-
-then you can run in any bot's command:
-
-    Libs.myLib.hello()
-    Libs.myLib.sayGoodbyeTo("Alice")
-
-See [more](https://help.bots.business/git/library)
-
-## Other bots example
-See other bots examples in the [github](https://github.com/bots-business?utf8=✓&tab=repositories&q=&type=public&language=javascript) or in the [Bot Store](https://bots.business/)
-
-
-## Other help
-[Help.bots.business](https://help.bots.business)
-
-## API
-See [API](https://api.bots.business/docs#/docs/summary)
-
-
-![](https://bots.business/images/web-logo.png)
+Structured into reusable `commands`, `conditions`, and `callbacks` to maintain clean and scalable code.
