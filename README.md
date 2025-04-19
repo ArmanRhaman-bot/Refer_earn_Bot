@@ -44,6 +44,7 @@ Allow users to **send payment requests** to other bot users. This system support
 - Both users get a **success message**
 - Requester’s **transaction history** is updated:
 
+
 #### ❌ Rejection or Insufficient Balance
 
 - Auto validation for available balance
@@ -120,20 +121,7 @@ This bot fulfills **all rules & scoring criteria** for the contest.
 
 ## 🧪 Live Demo (Screenshots)
 
-| Section | Preview |
-|--------|---------|
-| User Panel | [View](https://t.me/zooxceo/41) |
-| Balance Menu | [View](https://t.me/zooxceo/42) |
-| Referral Menu | [View](https://t.me/zooxceo/43) |
-| Referral Tree | [View](https://t.me/zooxceo/44) |
-| History Logs | [View](https://t.me/zooxceo/45) |
-| Wallet Bind | [View](https://t.me/zooxceo/46) |
-| Withdraw Menu | [View](https://t.me/zooxceo/47) |
-| Redeem Menu | [View](https://t.me/zooxceo/48) |
-| Code Create | [View](https://t.me/zooxceo/49) |
-| Code Redeem | [View](https://t.me/zooxceo/50) |
-| Captcha Verify | [View](https://t.me/zooxceo/51) |
-| Admin Panel | [51-70](https://t.me/zooxceo/52) ➝ [70](https://t.me/zooxceo/70) |
+- **User Panel & Admin Panel:** [View All Screens](https://bit.ly/4cDjF2C)
 
 ---
 
