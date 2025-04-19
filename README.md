@@ -41,7 +41,7 @@ Designed specifically to meet all requirements of the **BB Refer & Earn Bot Comp
 - ⭐ The amount used **must be available** in their balance  
 - ⭐ Codes can be created using **any name, word, or number**  
 - ⭐ Only **one code per name** is allowed  
-- ⭐ After creating a code, the **total cost = amount × max claims × 2**  
+- ⭐ After creating a code, the **total cost = amount × max claims**  
 - ⭐ Created code can be **posted to the Redeem Channel** via a single click  
 - ⭐ Users will receive **notifications** when someone redeems their code  
 
