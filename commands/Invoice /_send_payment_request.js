@@ -1,3 +1,21 @@
+/*CMD
+  command: /send_payment_request
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Invoice 
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 var botc = Bot.getProperty("botc");
 let target = User.getProperty("target_user_id");
 let amount = User.getProperty("amount_to_request");

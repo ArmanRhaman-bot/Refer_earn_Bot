@@ -1,9 +1,27 @@
+/*CMD
+  command: /u_giftcode
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Start-Menu
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 
 var text = "🧧 If you want to generate a gift code, then generate the code by sending the command below as instructed.\n\n<b>ex:</b> <code>/gift CODE AMOUNT MAX_CLAIMS</code>\n<b>ex:</b> <code>/gift GIFT2025 1 10</code>";
 var message_id = request.message.message_id;
 var buttons = [
   [
-    { text: "🔙 Back", callback_data: "/a_back" }
+    { text: "🔙 Back", callback_data: "/giftBox" }
   ]
 ];
 
@@ -17,4 +35,5 @@ Api.editMessageText({
     inline_keyboard: buttons
   }
 });
+
 

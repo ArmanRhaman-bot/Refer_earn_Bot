@@ -23,8 +23,7 @@ var setPayoutApiKey = Bot.getProperty("setPayoutApiKey","API not set")
 
 var txt = "<b>📥 Control here all withdrawal settings</B>\n\n–––––––––––––––––––––\n\n▪️<b>Withdrawal Mode:</b> "+w_mode+"\n\n▪️<b>Payout API:</b> "+setPayoutApiKey+"\n\n▪️<b>Admin ID:</b> "+admin+"\n\n▪️<b>Payout announced:</b> "+alertsChannel+""
 var inlkey = [
-  [{ text: "Withdrawal Mode: "+w_mode, callback_data: "/w_mode" }],
-  [{ text: "Withdrawal Channel", callback_data: "/w_channel" }],[{ text: "Payout API", callback_data: "/p_api" }],[{ text: "Payout API", callback_data: "/cur" }],
+  [{ text: "Withdrawal Mode: "+w_mode, callback_data: "/w_mode" }],  [{ text: "Withdrawal Channel", callback_data: "/w_channel" }],[{ text: "Payout API", callback_data: "/p_api" }],
   [{ text: "🔙 Back", callback_data: "/important_settings" }]
 ];
 

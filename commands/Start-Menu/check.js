@@ -23,6 +23,11 @@ var getChatMember =
   (status == "member") | (status == "administrator") | (status == "creator")
 
 if (getChatMember) {
+  Api.answerCallbackQuery({
+  callback_query_id: request.id,
+  text: "👍 Thanks, for joined with us!",
+  show_alert: true
+})
   Bot.runCommand("/getip")
 
 } else {

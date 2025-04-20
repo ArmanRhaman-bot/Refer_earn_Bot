@@ -1,150 +1,84 @@
-# ⭐ Refer & Earn Bot (REB) - Public Template
+# bbrebcontestbot - chat bot
+It is repository for chat bot: [@bbrebcontestbot](https://t.me/bbrebcontestbot)
 
-A powerful & production-ready Telegram bot for **Refer & Earn systems**, built using **BotScripter (BB Engine)**.  
-Designed specifically to meet all requirements of the **BB Refer & Earn Bot Competition**.
+## What it is?
+This repository can be imported to [Bots.Business](https://bots.business) as a worked chat bot.
 
----
+[Bots.Business](https://bots.business) - it is probably the first CBPaaS - Chat Bot Platform as a Service.
 
-## ✨ Key Features
+A CBPaaS is a cloud-based platform that enables developers to create chatbots without needing to build backend infrastructure.
 
-### 👤 User Interface
+## Create your own bot for Telegram from this Git repo
 
-- 🔒 **Mandatory Channel Subscription**
-- 🎉 One-time **Welcome Bonus** *(recorded in History)*
-- 💼 **Balance Overview**
-  - Total / Referral / Withdrawable Balance
-  - See how much more to earn to unlock Withdraw
-- 🔗 **Wallet Binding** with **live format validation**
-- 💸 **Withdraw Options**
-  - Auto Withdraw to any crypto wallet (5 sec processing)
-  - Manual Withdraw with Admin Approval flow
-- 👥 **Invite Friends** with Rank-Based Bonuses & Progress Bar
-- 🌳 **Referral Tree**: Visual & Bonus tracking of your team
-- 🏆 **Leaderboard**
-  - Top 10 referrers
-  - Auto reward distribution by admin-set date
-- 📜 **Transaction History** (last 20 entries)
+How to create bot?
+1. Create bot with [@BotFather](https://telegram.me/BotFather) and take Secret Token
+2. Create bot in App and add Secret Token
+3. Add Public Key from App as [Deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) with read access (and write access for bot exporting if you need it)
+4. Do import for this git repo
 
----
+Now you can talk with yours new Telegram Bot
 
-### 💳 Payment Request System
+See [more](https://help.bots.business/getting-started)
 
-Allow users to **send payment requests** to other bot users. This system supports peer-to-peer microtransactions within the bot ecosystem.
+## Commands - in commands folder
+File name - it is command name (Bot it can be rewritten in command description)
 
-#### 📤 Requesting a Payment
+Command can have: `name`, `help`, `aliases` (second names), `answer`, `keyboard`, `scnarios` (for simple logic) and other options.
 
-- Users can send a **payment request with amount** to another user's ID
-- Receiver gets a **confirm button** to accept the request
-- Requested amount must be available in the receiver’s balance
+### Command description
+It is file header:
 
-#### ✅ Accepting a Request
+    /*CMD
+      command: /test
+      help: this is help for ccommand
+      need_reply: [ true or false here ]
+      auto_retry_time: [ time in sec ]
+      answer: it is example answer for /test command
+      keyboard: button1, button2
+      aliases: /test2, /test3
+    CMD*/
 
-- Receiver’s withdrawable balance is **deducted**
-- Requester’s balance is **increased**
-- Both users get a **success message**
-- Requester’s **transaction history** is updated:
+See [more](https://help.bots.business/commands)
+
+### Command body
+It is command code in JavaScript.
+Use Bot Java Script for logic in command.
+
+For example:
+> Bot.sendMessage(2+2);
+
+See [more](https://help.bots.business/scenarios-and-bjs)
 
 
-#### ❌ Rejection or Insufficient Balance
+## Libraries - in libs folder
+You can store common code in the libs folder. File name - it is library name.
 
-- Auto validation for available balance
-- Requests are **one-time only** and can’t be re-used
+For example code in myLib.js:
 
----
+    function hello(){ Bot.sendMessage("Hello from lib!") }
+    function goodbye(name){ Bot.sendMessage("Goodbye, " + name) }
 
-### 🧧 Redeem & Create Code
+    publish({
+      sayHello: hello,
+      sayGoodbyeTo: goodbye
+    })
 
-#### 🛠️ Admin Features (Create)
+then you can run in any bot's command:
 
-- Admins can create codes **without amount limits**
-- Any **code name** allowed (no restrictions)
-- Codes can be posted directly to a **redeem channel**
+    Libs.myLib.hello()
+    Libs.myLib.sayGoodbyeTo("Alice")
 
-#### 👥 User Features (Create)
+See [more](https://help.bots.business/git/library)
 
-- Users can generate codes using **their balance**
-- Cost = `amount × max claims`
-- One unique name per code
-- Created codes can be **shared to others**
-- Users receive **notification** when someone claims their code
+## Other bots example
+See other bots examples in the [github](https://github.com/bots-business?utf8=✓&tab=repositories&q=&type=public&language=javascript) or in the [Bot Store](https://bots.business/)
 
-#### 🎁 Redeem Features
 
-- Admins can redeem any code (self-redeem has no alert)
-- Invalid or expired codes show **"Incorrect Code"**
-- Each user can claim each code **only once**
-- On success, claimed amount is **added to user's balance**
+## Other help
+[Help.bots.business](https://help.bots.business)
 
----
+## API
+See [API](https://api.bots.business/docs#/docs/summary)
 
-### 🛠️ Admin Control Panel
 
-- Toggle **Auto/Manual Withdraw** mode
-- Review & Act on **Withdraw Requests**
-- Set **Welcome Bonus**, **Min Withdraw**, and **Referral Rewards**
-- Maintenance mode On/Off broadcast 
-- Withdraw Mode On/Off broadcast 
-- Schedule **Leaderboard Rewards**
-- Run **Broadcasts** (Text / Media / Forwards)
-- Access live **User Stats**, **Growth Logs**, and more
-
----
-
-## ✅ BB Competition Compatibility
-
-This bot fulfills **all rules & scoring criteria** for the contest.
-
-### Compliance Checklist:
-
-- [x] Channel Join Enforcement  
-- [x] Welcome Bonus (Logged)  
-- [x] Invite with Rank-Based Bonus  
-- [x] Wallet & Balance Validation  
-- [x] Manual + Auto Withdraw Systems  
-- [x] Admin Panel with All Controls  
-- [x] Leaderboard + Referral Tree  
-- [x] Transaction History Logging  
-- [x] Broadcast Tools  
-- [x] BB-Ready Clean Code  
-- [x] Peer-to-Peer Payment Requests  
-
----
-
-### 🔐 Captcha & IP Verification
-
-- Intelligent **Captcha system** triggered via `/verify`
-- Checks for **real user IP** and blocks **VPN / multi-account abuse**
-- Ensures only **real users** can access the bot's core functions
-- **Admin users** automatically bypass captcha & verification for seamless control
-
----
-
-## 🧪 Live Demo (Screenshots)
-
-- **User Panel & Admin Panel:** [View All Screens](https://bit.ly/4cDjF2C)
-
----
-
-## 🧑‍💻 Developer
-
-**[@arman_rhaman](https://t.me/arman_rhaman)**  
-Feel free to fork, contribute, or connect!
-
----
-
-## ⚖️ License
-
-Open-source and free to use. Attribution appreciated.
-
----
-
-## 🛠️ Technology Used
-
-- **Bot Business Scripting (BJS)**  
-Custom JavaScript-like scripting language used in [BotScripter](https://botscripter.com) and [Bot Business](https://botbusiness.io), designed specifically for building Telegram bots.
-
-- **No External Frameworks**  
-Fully built using native BJS without relying on any third-party libraries, ensuring optimal performance within the Bot Business ecosystem.
-
-- **Modular Design**  
-Structured into reusable `commands`, `conditions`, and `callbacks` to maintain clean and scalable code.
+![](https://bots.business/images/web-logo.png)

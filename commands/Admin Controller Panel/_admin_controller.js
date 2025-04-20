@@ -28,7 +28,7 @@ var inlkey = [
   [{ text: "⛔ Ban", callback_data: "/ban" },
   { text: "♥️ Unban", callback_data: "/unban" }],[{ text: "➕ Add Balance", callback_data: "/add_bal" },{ text: "➖ Cut Balance", callback_data: "/cut_bal" }],[{ text: "🔍 Chcek User Balance", callback_data: "/check_bal" }],[{ text: "📨 Bot clone", callback_data: "/no_Xclaim" },{ text: "👀 Minimum Withdraw", callback_data: "/min_withdraw" }],
   [{ text: "🔊 Broadcast", callback_data: "/MRbroadcast" },{ text: "📞 Support ID", callback_data: "/supportID" }],[{ text: "📤 Withdrawal Status", callback_data: "/withdrawalStatus" },{ text: "🤖 Maintenance", callback_data: "/maintance" }],
-   [{ text: "⚙️ Withdrawal Mode: "+w_mode, callback_data: "/w_mode" }],[{ text: "🆕 New User Reset ("+newu.value()+")", callback_data: "/new_u_reset" }],
+   [{ text: "⚙️ Withdrawal Mode: "+w_mode, callback_data: "/w_mode" }],[{ text: "🆕 New User Reset ("+newu.value()+")", callback_data: "/new_u_reset" }],[{ text: "🧧 Make Gift Card", callback_data: "/gift_create" }],
   [{ text: "🔙 Back", callback_data: "/l_back" }]
 ];
 

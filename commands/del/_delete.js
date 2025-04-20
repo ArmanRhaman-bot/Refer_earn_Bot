@@ -1,5 +1,5 @@
 /*CMD
-  command: /delete_and_send_final
+  command: /delete
   help: 
   need_reply: false
   auto_retry_time: 
@@ -16,13 +16,8 @@
   group: 
 CMD*/
 
+var messageID = User.getProperty("messageID")
 
 Api.deleteMessage({
-  chat_id: chat.chatid,
-  message_id: options.result.message_id
-});
-
-Bot.run({
-  command: "/send_final_message",
-  delay: 1
-});
+  message_id: messageID
+})

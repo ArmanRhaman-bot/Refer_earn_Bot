@@ -87,7 +87,7 @@ var txt = "*👤 Your account status*\n\n" +
 var inlkey = [
   [{ text: "📄 Transaction History", callback_data: "/his" }],
   [{ text: "📤 Withdraw", callback_data: "/withdraw_c" }, { text: "🏦 Update Wallet", callback_data: "/wallet" }],
-  [{ text: "🔙 Back", callback_data: "/earn_menu" }]
+[{ text: "🔙 Back", callback_data: "/earn_menu" }]
 ];
 
 Api.editMessageText({

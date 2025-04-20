@@ -27,7 +27,7 @@ var buttons = [
 
 User.setProperty("myk11", message_id, "string");
 
-// Edit the message
+
 Api.editMessageText({
   text: text,
   message_id: message_id,
