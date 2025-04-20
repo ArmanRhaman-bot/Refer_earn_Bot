@@ -1,5 +1,5 @@
 /*CMD
-  command: /rewardHis
+  command: /rewardHis2
   help: 
   need_reply: false
   auto_retry_time: 
@@ -18,15 +18,15 @@ CMD*/
 
 
 
-var rewardHis = User.getProperty("rewardHis");
+var rewardHis = User.setProperty("rewardHis", [], "json");
 
 if (rewardHis === undefined || rewardHis === null || rewardHis === "") {
-  rewardHis = "❌ No games rewards history found.";
+  rewardHis = "🧹 Rewards history cleared";
 }
 
 var txt = "<b>🎮 Rewards History:-</b>\n\n<blockquote expandable><i>" + rewardHis + "</i></blockquote>";
 var inlkey = [
-  [
+[
     {
       text: "🗑️ Cleaned History",
       callback_data: "/rewardHis1"

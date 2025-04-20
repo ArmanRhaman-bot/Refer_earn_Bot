@@ -49,9 +49,6 @@ if (referrer) {
   Libs.ResourcesLib.anotherUserRes("gp", refid).add(0.1);
   Libs.ResourcesLib.anotherUserRes("refcom", refid).add(bonus);
 
-  Libs.ResourcesLib.anotherChatRes("non_invited", "global").add(-1);
-  Libs.ResourcesLib.anotherChatRes("invited_you", "global").add(1);
-
   Bot.sendMessageToChatWithId(refid, "*🎉 Good news!* Your referral has completed all tasks.\n\nYou've earned *" + daily_bonus + " " + botc + "* & *0.1 GP*. Check it in the Referral menu!");
 } else {
   Bot.sendMessage();

@@ -1,5 +1,5 @@
 /*CMD
-  command: /withdraw_manually_3
+  command: /withdraw_manually_3#1
   help: 
   need_reply: true
   auto_retry_time: 
@@ -76,7 +76,11 @@ try {
       parse_mode: "Markdown",
       reply_markup: { inline_keyboard: buttons }
     });
+// TxID তৈরি আর ডেটা সেভের পরে এইটা যোগ করো
+Bot.setProperty("withdrawStatus_" + txID, "Pending", "string");
 
+// একইসাথে ইউজারের withdraw history স্টোর করতে চাইলে:
+User.setProperty("lastTxID", txID, "string");  // Future use optional
     withdrawable.add(-amount);
     totalManWithdrawn.add(+amount);
     let botLink = bot.name;
@@ -108,6 +112,7 @@ try {
       "<b>💰 Amount:</b> <code>" + amount + " " + botc + "</code>\n" +
       "<b>💳 Address:</b> <code>" + wallet + "</code>\n" +
       "<b>⏳ Time:</b> " + time + "\n" +
+      "<b>🆔 TxID:</b> <code>#W" + txID + "</code>\n" +
       "------------------------------------\n" +
       "✅ Status: <b>Pending</b>";
 
@@ -127,6 +132,8 @@ try {
         time: time
       }), "string");
 
+      Bot.setProperty("withdrawStatus_" + txID, "Pending", "string");
+
       Api.sendMessage({
         chat_id: admin,
         text: completeText,
@@ -134,8 +141,8 @@ try {
         reply_markup: {
           inline_keyboard: [
             [
-              { text: "✅ Approve", callback_data: "/approve " + user.telegramid},
-              { text: "❌ Decline", callback_data: "/decline " + user.telegramid }
+              { text: "✅ Approve", callback_data: "/approve " + user.telegramid + " " + txID },
+{ text: "❌ Decline", callback_data: "/decline " + user.telegramid + " " + txID }
             ]
           ]
         }

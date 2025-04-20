@@ -16,7 +16,6 @@
   group: 
 CMD*/
 
-
 var messageID = request.message_id;
 var deleteAfter = 5;
 
@@ -26,7 +25,6 @@ Bot.run({
   command: "/delete",
   run_after: deleteAfter
 });
-
 
 var list = Bot.getProperty("user_list", []);
 if (!list.includes(user.telegramid)) {

@@ -55,9 +55,7 @@ var text = "*❓ Hello, how can I help you?*";
 var message_id = request.message.message_id;
 var buttons = [
   [
-    { text: "🔙 Back", callback_data: "/earn_menu" },
-    { text: "FAQ 🔍", callback_data: "/faq" }
-  ]
+    { text: "🔙 Back", callback_data: "/earn_menu" }]
 ];
 
 

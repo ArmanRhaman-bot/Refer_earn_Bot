@@ -54,6 +54,12 @@ if (Bot.getProperty("reward_distributed_" + rd)) {
   return;
 }
 
+Api.answerCallbackQuery({
+  callback_query_id: request.id,
+  text: "🔝 Leaderboard Rewards distribution complete",
+  show_alert: true
+})
+
 let botc = Bot.getProperty("botc", "USDT");
 let top_1 = parseFloat(Bot.getProperty("top_1", "0"));
 let top_2 = parseFloat(Bot.getProperty("top_2", "0"));

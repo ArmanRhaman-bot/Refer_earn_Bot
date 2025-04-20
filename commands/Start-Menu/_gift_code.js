@@ -1,3 +1,21 @@
+/*CMD
+  command: /gift_code
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Start-Menu
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 var messageID = request.message_id;
 var deleteAfter = 0;
 

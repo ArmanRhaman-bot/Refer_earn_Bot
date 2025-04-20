@@ -16,5 +16,5 @@
   group: 
 CMD*/
 
-// Save message_id to delete later
+
 User.setProperty("verifyMsgID", options.result.message_id, "integer")

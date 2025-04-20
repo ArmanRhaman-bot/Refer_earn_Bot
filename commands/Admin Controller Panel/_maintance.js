@@ -37,5 +37,5 @@ Api.editMessageText({
   }
 });
 
-// Run secondary command
+
 Bot.runCommand("/maintance2");

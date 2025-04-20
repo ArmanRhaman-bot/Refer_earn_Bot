@@ -1,3 +1,21 @@
+/*CMD
+  command: /invoice
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Invoice 
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 
 var text = "<b>🔍 Enter the Telegram ID of the user you want to request payment from:</b>";
 var message_id = request.message.message_id;

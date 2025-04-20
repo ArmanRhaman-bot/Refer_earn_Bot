@@ -77,7 +77,7 @@ let btns = q.options.map(opt => [{ text: opt, callback_data: "/trivia_check " + 
 
 var txt = "<b>🧠 Trivia Challenge</b>\n\n" +
 "<i>" + q.question + "</i>\n\n" +
-"Answer correctly to win <b>50 " + botc + "</b>!\nYou have only 1 chance.";
+"Answer correctly to win <b>100 " + botc + "</b>!\nYou have only 1 chance.";
 
 Api.editMessageText({
   message_id: options.result.message_id,

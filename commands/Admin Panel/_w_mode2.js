@@ -32,7 +32,7 @@ if (users === admin) {
     var text =
       "<b>📤 Withdrawal mode status set to :</b> <code>" + w_mode + "</code>"
 var buttons = [
-  [{ text: "🔙 Back", callback_data: "/w_back" }]]
+  [{ text: "🔙 Back", callback_data: "/a_back" }]]
     Api.editMessageText({
   text: text,
   message_id: ont,
@@ -46,7 +46,7 @@ var buttons = [
     var text =
       "<b>⚠️ Send only:</b> <code>Auto</code> <b>or</b> <code>Manually</code> mode"
 var buttons = [
-  [{ text: "🔙 Back", callback_data: "/w_mode" }]]
+  [{ text: "🔙 Back", callback_data: "/a_mode" }]]
     Api.editMessageText({
   text: text,
   message_id: ont,
@@ -60,7 +60,7 @@ var buttons = [
 } else {
   var txt = "*❌ You are not our Bot admin*"
 var inlkey = [
-  [{ text: "🔙 Back", callback_data: "/panel" }]];
+  [{ text: "🔙 Back", callback_data: "/l_back" }]];
 
 Api.editMessageText({
     message_id: ont,

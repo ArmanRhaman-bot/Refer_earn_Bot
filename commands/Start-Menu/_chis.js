@@ -1,9 +1,9 @@
 /*CMD
-  command: /his
+  command: /chis
   help: 
   need_reply: false
   auto_retry_time: 
-  folder: 
+  folder: Start-Menu
 
   <<ANSWER
 
@@ -16,10 +16,10 @@
   group: 
 CMD*/
 
-let history = User.getProperty("history") || "";
+var history = User.setProperty("history", [], "json");
 
 if (!history || history.trim() === "") {
-  history = "❌ No transaction history found.";
+  history = "🗑️ All history cleared";
 } else {
   
   let lines = history.trim().split("\n");
@@ -27,8 +27,14 @@ if (!history || history.trim() === "") {
   history = last20.join("\n");
 }
 
-var txt = "<b>📄 Latest 10 Transactions History:</b>\n<blockquote expandable>" + history + "</blockquote>";
+var txt = "<b>📄 Latest 10 Transactions History:</b>\n\n<blockquote expandable>" + history + "</blockquote>";
 var inlkey = [
+  [
+    {
+      text: "🧹 Clear History",
+      callback_data: "/chis1"
+    }
+  ],
   [
     {
       text: "🔙 Back",

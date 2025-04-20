@@ -146,7 +146,7 @@ if (request.animation) {
 }
 
 // Message too long check
-if (message && message.length > 1000) {
+if (message && message.length > 10000) {
   Bot.sendMessage("Message Too Big.");
   return;
 }

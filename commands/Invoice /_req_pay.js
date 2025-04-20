@@ -1,3 +1,21 @@
+/*CMD
+  command: /req_pay
+  help: 
+  need_reply: true
+  auto_retry_time: 
+  folder: Invoice 
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 Api.deleteMessage({chat_id: chat.chatid, message_id: request.message_id});
 var ont = User.getProperty("myk11");
 
