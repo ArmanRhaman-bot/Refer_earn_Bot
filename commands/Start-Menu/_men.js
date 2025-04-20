@@ -16,108 +16,65 @@
   group: 
 CMD*/
 
-var ban = Bot.getProperty(user.telegramid)
+var support_id = Bot.getProperty("support_id");
+var ban = Bot.getProperty(user.telegramid);
 
 if (ban === "Ban") {
-
-var txt = "<i>🚫 You're banned.</i>"
-var inlkey = [
-  [{ text: "Support Team", url: "t.me/arman_rhaman" }]]
+  var txt = "<i>🚫 You're banned.</i>";
+  var inlkey = [[{ text: "Support Team", url: "https://t.me/" + support_id }]];
   Api.editMessageText({
     message_id: request.message.message_id,
     text: txt,
     parse_mode: "html",
     reply_markup: { inline_keyboard: inlkey }
-});
-  return
+  });
+  return;
 }
 
-var maintenanceStatus = Bot.getProperty("maintenanceStatus")
+var maintenanceStatus = Bot.getProperty("maintenanceStatus");
 
 if (maintenanceStatus === "On") {
   Api.answerCallbackQuery({
-  callback_query_id: request.id,
-  text: "🛠️ Bot is under maintenance, please come back after some time.",
-  show_alert: true
-})
-  var onText =
-    "<i>🛠️ Bot is under maintenance, please come back after some time.</i>"
+    callback_query_id: request.id,
+    text: "🛠️ Bot is under maintenance, please come back after some time.",
+    show_alert: true
+  });
 
-var inlkey = [
-  [{ text: "🤖 Go to Menu", callback_data: "/earn_menu" }]]
-  
+  var onText = "<i>🛠️ Bot is under maintenance, please come back after some time.</i>";
+  var inlkey = [[{ text: "🤖 Go to Menu", callback_data: "/earn_menu" }]];
+
   Api.editMessageText({
     message_id: request.message.message_id,
-    text: txt,
+    text: onText,
     parse_mode: "html",
     reply_markup: { inline_keyboard: inlkey }
-});
-  return
+  });
+  return;
 }
 
-var bbadmin = 519829299;
-var users = user.telegramid;
-
-if (users === bbadmin) {
-  var wbb = User.getProperty("wbb");
-  
-  if (wbb == undefined) {
-    let balance = Libs.ResourcesLib.userRes("balance");
-    let withdrawable = Libs.ResourcesLib.userRes("withdrawable"); 
-    balance.add(100);
-    withdrawable.add(100);
-    
-    Api.answerCallbackQuery({
-      callback_query_id: request.id,
-      text: "🥺 Attention please Bot Business Admin",
-      show_alert: true
-    });
-    
-    var history = User.getProperty("history");
-    if (history === undefined || history === null) {
-      history = "";
-    }
-
-    history += "\n🤖 " + new Date().toLocaleString("en-US", {timeZone: "Asia/Dhaka"}) + ": 100 DOGS\n (bb_admin_wlc_bonus) - completed";
-
-    User.setProperty("history", history, "string");
-    Bot.runCommand("/bb_txt");
-  } else {
-    Bot.runCommand("/earn_menu");
-  }
-} else {
-  var history = User.getProperty("history");
-  var date = new Date().toLocaleString("en-US", {
-    timeZone: "Asia/Dhaka"
-  });
+// Regular User Bonus
+var wb = User.getProperty("Wb");
+if (!wb) {
   var wlc_bonus = Bot.getProperty("wlc_bonus");
   var botc = Bot.getProperty("botc");
-  var wb = User.getProperty("Wb");
+  var history = User.getProperty("history") || "";
+  var date = new Date().toLocaleString("en-US", { timeZone: "Asia/Dhaka" });
 
-  if (wb == undefined) {
-    let balance = Libs.ResourcesLib.userRes("balance");
-    let withdrawable = Libs.ResourcesLib.userRes("withdrawable"); 
-    balance.add(+wlc_bonus);
-    withdrawable.add(+wlc_bonus);
-    
-    Api.answerCallbackQuery({
-      callback_query_id: request.id,
-      text: "🎁 Congratulations, You Received "+wlc_bonus+" "+botc+" As a Welcome Bonus.",
-      show_alert: true
-    });
+  let balance = Libs.ResourcesLib.userRes("balance");
+  let withdrawable = Libs.ResourcesLib.userRes("withdrawable");
+  balance.add(+wlc_bonus);
+  withdrawable.add(+wlc_bonus);
 
-    if (history === undefined || history === null) {
-      history = "";
-    }
+  Api.answerCallbackQuery({
+    callback_query_id: request.id,
+    text: "🎁 Congratulations, You Received " + wlc_bonus + " " + botc + " As a Welcome Bonus.",
+    show_alert: true
+  });
 
-    history += "\n🎁 " + date + ": "+wlc_bonus+" "+botc+"\n (welcome_bonus) - completed";
+  history += "\n🎁 " + date + ": " + wlc_bonus + " " + botc + "\n (welcome_bonus) - completed";
 
-    User.setProperty("history", history, "string");
-    User.setProperty("Wb", "claimed", "string");
-    Bot.runCommand("/earn_menu");
-    var non_invited = Libs.ResourcesLib.anotherChatRes("non_invited", "global")
-non_invited.add(1)
-  } else {
-    Bot.runCommand("/earn_menu");
-  }
+  User.setProperty("history", history, "string");
+  User.setProperty("Wb", "claimed", "string");
 }
+
+Bot.runCommand("/earn_menu");
