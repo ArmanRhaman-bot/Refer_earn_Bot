@@ -16,21 +16,22 @@
   group: 
 CMD*/
 
-var txt = "🪂 Successfully, you passed the Verification process.\n\n🔧 Now, You access menu!"
+var txt = "🪂 <b>Successfully, you passed the Verification process.</b>\n\n🔧 Now, you can access the menu!";
 var inlkey = [
-  [{ text: "🔧 Access Menu", callback_data: "/men" }]]
-  
-  if (!request.data) {
-  Api.sendMessage({
-    text: txt,
-    parse_mode: "html",
-    reply_markup: { inline_keyboard: inlkey }
-  })
-} else {
+  [{ text: "🔧 Access Menu", callback_data: "/men" }]
+];
+
+if (request && request.message && request.message.message_id) {
   Api.editMessageText({
     message_id: request.message.message_id,
     text: txt,
-    parse_mode: "html",
+    parse_mode: "HTML",
     reply_markup: { inline_keyboard: inlkey }
-  })
+  });
+} else {
+  Api.sendMessage({
+    text: txt,
+    parse_mode: "HTML",
+    reply_markup: { inline_keyboard: inlkey }
+  });
 }

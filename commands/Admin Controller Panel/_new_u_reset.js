@@ -21,5 +21,6 @@ Api.answerCallbackQuery({
   text: "Reset Done",
   show_alert: true
 })
+Bot.runCommand("/admin_controller")
 let newu = Libs.ResourcesLib.anotherChatRes("newu", "global");
 newu.remove(parseFloat(1));

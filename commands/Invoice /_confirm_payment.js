@@ -1,3 +1,21 @@
+/*CMD
+  command: /confirm_payment
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Invoice 
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 if (request.data) {
   Api.deleteMessage({
     message_id: request.message.message_id

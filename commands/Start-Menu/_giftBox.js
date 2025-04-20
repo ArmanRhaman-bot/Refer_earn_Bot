@@ -1,3 +1,21 @@
+/*CMD
+  command: /giftBox
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Start-Menu
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 var txt = "🎁 Select the button you want to use. "
 var inlkey = [[{ text: "🦋 Invoice", callback_data: "/invoice" }],
   [{ text: "✨ Create Gift Code", callback_data: "/u_giftcode" }],

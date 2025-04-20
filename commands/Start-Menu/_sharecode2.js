@@ -1,3 +1,21 @@
+/*CMD
+  command: /sharecode2
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: Start-Menu
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
 let giftcode = User.getProperty("lastGiftCode");
 let gift = Bot.getProperty("giftcode_" + giftcode);
 let botc = Bot.getProperty("botc");

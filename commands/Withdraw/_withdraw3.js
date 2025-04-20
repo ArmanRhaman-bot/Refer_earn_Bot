@@ -19,7 +19,7 @@ CMD*/
 
 Bot.runCommand("/earn_menu");
 
-var currency = Bot.getProperty("currency");
+var currency = Bot.getProperty("currency","DOGS");
 var p_api = Bot.getProperty("p_api");
 var wallet = User.getProperty("wallet");
 var amount = User.getProperty("amount");
@@ -29,7 +29,7 @@ let options = {
   url: "api/send",
   fields: {
     amount: amount,
-    currency: currency,
+    currency: "DOGS",
     network: "TON",
     address: wallet,
     onCallback: "/confirm2"

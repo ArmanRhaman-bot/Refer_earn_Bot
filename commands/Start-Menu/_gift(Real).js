@@ -1,5 +1,5 @@
 /*CMD
-  command: /gift
+  command: /gift(Real)
   help: 
   need_reply: false
   auto_retry_time: 
@@ -16,15 +16,6 @@
   group: 
 CMD*/
 
-var messageID = request.message_id;
-var deleteAfter = 0;
-
-User.setProperty("messageID", messageID, "string");
-
-Bot.run({
-  command: "/delete",
-  run_after: deleteAfter
-});
 var botc = Bot.getProperty("botc");
 var ont = User.getProperty("myk11");
 
@@ -56,6 +47,7 @@ if (parts.length < 4) {
     return;
   }
 
+  // Check if gift code already exists
   let existing = Bot.getProperty("giftcode_" + code);
   if (existing) {
     var text = "⚠️ *This gift code already exists!*\nPlease choose a different code name.";
@@ -70,6 +62,7 @@ if (parts.length < 4) {
   }
 
   let totalCost = amount * maxClaims;
+
   let withdrawable = Libs.ResourcesLib.userRes("withdrawable");
 
   if (withdrawable.value() < totalCost) {
@@ -82,6 +75,7 @@ if (parts.length < 4) {
       reply_markup: { inline_keyboard: buttons }
     });
   } else {
+    // Deduct balance
     withdrawable.remove(totalCost);
 
     let gift = {
@@ -93,6 +87,8 @@ if (parts.length < 4) {
     };
 
     Bot.setProperty("giftcode_" + code, gift, "json");
+
+    // Store last created gift code info to user-specific property
     User.setProperty("lastGiftCode", code, "string");
 
     var text = "*🧧 Gift code created:* `" + code + "`\n*💸 Amount per claim:* " + amount + " " + botc + "\n*👥 Max Claims:* " + maxClaims + "\n*💰 Total Deducted:* " + totalCost + " " + botc;
